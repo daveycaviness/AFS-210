@@ -54,8 +54,12 @@ class Playlist:
         self.songs.clear()
 
     def showList(self):
-        for song in self.songs:
-            print(f'{song.title} by {song.artist}')
+        temp = self.songs.copy()
+        revList = []
+        for song in temp:
+            revList.insert(0, song)
+        for song in revList:
+            print(f"{song.title} by {song.artist}")
 
 current_playlist = Playlist()
 
